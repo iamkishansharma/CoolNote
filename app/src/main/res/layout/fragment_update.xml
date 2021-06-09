@@ -7,66 +7,49 @@
     android:padding="16dp"
     tools:context=".fragments.UpdateFragment">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/title_box"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
+    <EditText
+        android:id="@+id/update_title_et"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:background="@drawable/edt_top"
         android:hint="@string/title"
+        android:inputType="text"
+        android:paddingStart="8dp"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/current_title_et"
-            style="@style/TextAppearance.AppCompat.Large"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ems="10"
-            android:inputType="textPersonName" />
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/priority_box"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <Spinner
+        android:id="@+id/update_priority_spinner"
+        style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="8dp"
-        android:hint="@string/priority"
-        android:paddingStart="16dp"
+        android:background="@drawable/edt_middle"
+        android:entries="@array/priority"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_box">
+        app:layout_constraintTop_toBottomOf="@+id/update_title_et" />
 
-        <AutoCompleteTextView
-            android:id="@+id/current_priority_spinner"
-            style="@style/TextAppearance.AppCompat.Large"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:entries="@array/priority"
-            android:inputType="none" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <EditText
+        android:id="@+id/update_description_et"
+        style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/edt_bottom"
+        android:gravity="start|top"
         android:hint="@string/description"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
+        android:paddingStart="8dp"
         app:layout_constraintBottom_toTopOf="@+id/update_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priority_box">
-
-        <EditText
-            android:id="@+id/current_description_et"
-            style="@style/TextAppearance.AppCompat.Large"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/update_priority_spinner" />
 
     <Button
         android:id="@+id/update_button"
@@ -76,6 +59,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

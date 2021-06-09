@@ -33,7 +33,7 @@
         android:label="Update Note"
         tools:layout="@layout/fragment_update">
         <action
-            android:id="@+id/action_updateFragment_to_listFragment"
+            android:id="@+id/action_updateFragment_to_noteFragment"
             app:destination="@id/noteFragment"
             app:enterAnim="@anim/from_right"
             app:exitAnim="@anim/to_left"
@@ -48,7 +48,7 @@
         android:label="Add note"
         tools:layout="@layout/fragment_add">
         <action
-            android:id="@+id/action_addFragment_to_listFragment"
+            android:id="@+id/action_addFragment_to_noteFragment"
             app:destination="@id/noteFragment"
             app:enterAnim="@anim/from_left"
             app:exitAnim="@anim/to_right"
