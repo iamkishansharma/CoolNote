@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/update_title_et"
-        style="@style/TextAppearance.AppCompat.Large"
+        style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/edt_top"
@@ -24,7 +24,6 @@
 
     <Spinner
         android:id="@+id/update_priority_spinner"
-        style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="8dp"
@@ -36,7 +35,7 @@
 
     <EditText
         android:id="@+id/update_description_et"
-        style="@style/TextAppearance.AppCompat.Large"
+        style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
