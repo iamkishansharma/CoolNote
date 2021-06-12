@@ -1,5 +1,6 @@
 package com.heycode.coolnote.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
 import android.widget.Button
@@ -50,13 +51,14 @@ class UpdateFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        if (item.itemId == R.id.delete_note) {
-//
-//        }
+        if (item.itemId == R.id.delete_note) {
+            confirmItemDelete()
+        }
         return true
     }
 
-    fun updateItem() {
+
+    private fun updateItem() {
         val titl = title.text.toString()
         val desc = description.text.toString()
         val prio = prioritySpinner.selectedItem.toString()
@@ -77,5 +79,22 @@ class UpdateFragment : Fragment() {
             title.error = "Required"
             description.error = "Required"
         }
+    }
+
+    private fun confirmItemDelete() {
+        AlertDialog.Builder(requireContext())
+            .setPositiveButton("Yes") { _, _ ->
+                noteViewModel.deleteNote(args.currentItem)
+                Toast.makeText(
+                    requireContext(),
+                    "Successfully removed: ${args.currentItem.title}",
+                    Toast.LENGTH_SHORT
+                ).show()
+                findNavController().navigate(R.id.action_updateFragment_to_noteFragment)
+            }
+            .setNegativeButton("No") { _, _ -> }
+            .setTitle("Delete \"${args.currentItem.title}\"?")
+            .setMessage("Are you sure you want ot delete this note?")
+            .create().show()
     }
 }
