@@ -39,6 +39,9 @@
             app:exitAnim="@anim/to_left"
             app:popUpTo="@id/noteFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="currentItem"
+            app:argType="com.heycode.coolnote.models.NoteData" />
 
     </fragment>
 

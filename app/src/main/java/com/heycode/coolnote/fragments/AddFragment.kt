@@ -36,7 +36,7 @@ class AddFragment : Fragment() {
 
         view.findViewById<Spinner>(R.id.priority_spinner).onItemSelectedListener =
             sharedViewModel.listener
-        
+
         return view
     }
 
