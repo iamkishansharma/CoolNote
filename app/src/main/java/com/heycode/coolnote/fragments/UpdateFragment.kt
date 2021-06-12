@@ -53,8 +53,9 @@ class UpdateFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.delete_note) {
             confirmItemDelete()
+            return true
         }
-        return true
+        return false
     }
 
 
@@ -71,7 +72,7 @@ class UpdateFragment : Fragment() {
                 sharedViewModel.parsePriority(prio)
             )
             noteViewModel.updateNote(updatedNote)
-            Toast.makeText(requireContext(), "Updated successfully!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "✔ Updated!", Toast.LENGTH_SHORT).show()
 
             findNavController().navigate(R.id.action_updateFragment_to_noteFragment)
 
@@ -87,14 +88,14 @@ class UpdateFragment : Fragment() {
                 noteViewModel.deleteNote(args.currentItem)
                 Toast.makeText(
                     requireContext(),
-                    "Successfully removed: ${args.currentItem.title}",
+                    "✔ Removed! : ${args.currentItem.title}",
                     Toast.LENGTH_SHORT
                 ).show()
                 findNavController().navigate(R.id.action_updateFragment_to_noteFragment)
             }
             .setNegativeButton("No") { _, _ -> }
-            .setTitle("Delete \"${args.currentItem.title}\"?")
-            .setMessage("Are you sure you want ot delete this note?")
+            .setTitle("\uD83D\uDEA9 Delete \"${args.currentItem.title}\"?")
+            .setMessage("Are you sure you want to delete this note?")
             .create().show()
     }
 }

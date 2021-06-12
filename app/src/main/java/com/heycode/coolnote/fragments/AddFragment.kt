@@ -52,12 +52,11 @@ class AddFragment : Fragment() {
         if (sharedViewModel.verifyDataFromUser(title, description)) {
             val noteData = NoteData(0, title, description, sharedViewModel.parsePriority(priority))
             noteViewModel.insertNote(noteData)
-            Toast.makeText(requireContext(), "Note added successfully", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "✔ Added!", Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_addFragment_to_noteFragment)
         } else {
             mTitle.error = "Required"
             mDescription.error = "Required"
         }
     }
-
 }
