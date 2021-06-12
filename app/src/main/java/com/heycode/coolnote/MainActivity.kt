@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        window.setBackgroundDrawableResource(R.color.white)
         setupActionBarWithNavController(findNavController(R.id.navHostFragment))
     }
 
