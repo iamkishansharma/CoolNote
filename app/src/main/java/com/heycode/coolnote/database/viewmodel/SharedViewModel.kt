@@ -6,10 +6,17 @@ import android.widget.AdapterView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
 import com.heycode.coolnote.R
+import com.heycode.coolnote.models.NoteData
 import com.heycode.coolnote.models.Priority
 
 class SharedViewModel(application: Application) : AndroidViewModel(application) {
+    val emptyDatabase: MutableLiveData<Boolean> = MutableLiveData(true)
+
+    fun isDatabaseEmpty(noteData: List<NoteData>) {
+        emptyDatabase.value = noteData.isEmpty()
+    }
 
     val listener: AdapterView.OnItemSelectedListener = object : AdapterView.OnItemSelectedListener {
         override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
